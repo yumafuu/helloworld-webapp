@@ -6,6 +6,8 @@ If you set `TCP_CONNECTION_ADDRS` environment variables, You can check TCP conne
 
 This is intended for use during first time setup of ECS fargate, etc.
 
+Preparing images for ECR is the biggest pain in my life!
+
 ## Endpoints
 
 All path return status 200.
