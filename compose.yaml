@@ -5,6 +5,7 @@ networks:
 services:
   hww-server:
     container_name: hww-server
+    # image: yumafuu/helloworld-webapp:latest
     build:
       context: .
       dockerfile: Dockerfile

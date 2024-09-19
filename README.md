@@ -2,6 +2,8 @@
 
 This is a HelloWorld webapp that runs on `PORT` environment variables.
 
+Also if you set `TCP_CONNECTION_ADDRS`, You can check TCP connection to a list of addresses.
+
 ## Endpoints
 
 All path return status 200.
@@ -16,9 +18,12 @@ Default is `8080`.
 
 - `TCP_CONNECTION_ADDRS` (optional)
 
-List of TCP connection addresses to check.
+List of TCP connection addresses to check. (comma separated)
 
 Default is ` `(empty) .
+
+For example, `TCP_CONNECTION_ADDRS=mysql.example.com:3306,redis.example.com:6379`
+
 
 - `TCP_CONNECTION_TIMEOUT` (optional)
 
@@ -29,8 +34,14 @@ Default is `5`.
 
 ## Running
 
+[compose.yaml](https://github.com/yumafuu/helloworld-webapp/blob/main/compose.yaml) show full example.
+
 ```bash
+# This will run the webapp on port 3000 without checking TCP connection.
 $ docker run -p 3000:3000 -e PORT=3000 yumafuu/helloworld-webapp
+
+# This will run the webapp on port 9000 with checking TCP connection.
+$ docker run -p 9000:9000 -e PORT=9000 -e TCP_CONNECTION_ADDRS=mysql.example.com:3306,redis.example.com:6379 yumafuu/helloworld-webapp
 ```
 
 
