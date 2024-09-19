@@ -13,7 +13,7 @@ import (
 
 var (
 	// This is list of TCP connection that checked at the start of the application
-	// Env: TCP_CONNECTIONS
+	// Env: TCP_CONNECTION_ADDRS
 	// Required: false
 	// Default: []string{}
 	tcpAddrs = []string{}
@@ -31,7 +31,7 @@ var (
 )
 
 func init() {
-	tcpAddrs = strings.Split(os.Getenv("TCP_CONNECTIONS"), ",")
+	tcpAddrs = strings.Split(os.Getenv("TCP_CONNECTION_ADDRS"), ",")
 	timeoutStr := os.Getenv("TCP_CONNECTION_TIMEOUT")
 	if timeoutStr != "" {
 		var err error
