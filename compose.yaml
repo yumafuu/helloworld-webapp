@@ -1,0 +1,38 @@
+networks:
+  default:
+    name: hww
+
+services:
+  hww-server:
+    container_name: hww-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PORT: "8080"
+      TCP_CONNECTIONS: "hww-mysql:3306,hww-redis:6380"
+    depends_on:
+      hww-mysql:
+        condition: service_healthy
+      hww-redis:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+  hww-mysql:
+    container_name: helloworld-mysql
+    image: mysql:8.4.2
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: helloworld
+      MYSQL_ROOT_PASSWORD: password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+  hww-redis:
+    container_name: helloworld-redis
+    image: redis:7.4.0-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      timeout: 20s
+      retries: 10
