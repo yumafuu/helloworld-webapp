@@ -2,7 +2,9 @@
 
 This is a HelloWorld webapp that runs on `PORT` environment variables.
 
-Also if you set `TCP_CONNECTION_ADDRS`, You can check TCP connection to a list of addresses.
+If you set `TCP_CONNECTION_ADDRS` environment variables, You can check TCP connection to a list of addresses.
+
+This is intended for use during first time setup of ECS fargate, etc.
 
 ## Endpoints
 
