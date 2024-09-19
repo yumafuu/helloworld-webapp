@@ -10,7 +10,7 @@ Preparing images for ECR is the biggest pain in my life!
 
 ## Endpoints
 
-All path return status 200.
+Returns status 200 for all paths.
 
 ## Environment variables
 
