@@ -14,13 +14,13 @@ Returns status 200 for all paths.
 
 ## Environment variables
 
-- `PORT` (optional)
+### `PORT` (optional)
 
 The port the server will listen to.
 
 Default is `8080`.
 
-- `TCP_CONNECTION_ADDRS` (optional)
+### `TCP_CONNECTION_ADDRS` (optional)
 
 List of TCP connection addresses to check. (comma separated)
 
@@ -29,7 +29,7 @@ Default is ` `(empty) .
 For example, `TCP_CONNECTION_ADDRS=mysql.example.com:3306,redis.example.com:6379`
 
 
-- `TCP_CONNECTION_TIMEOUT` (optional)
+### `TCP_CONNECTION_TIMEOUT` (optional)
 
 Timeout in seconds for TCP connection check.
 
