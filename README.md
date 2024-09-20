@@ -38,8 +38,6 @@ Default is `5`.
 
 ## Running
 
-[compose.yaml](https://github.com/yumafuu/helloworld-webapp/blob/main/compose.yaml) show full example.
-
 ```bash
 # This will run the webapp on port 3000 without checking TCP connection.
 $ docker run -p 3000:3000 -e PORT=3000 yumafuu/helloworld-webapp
@@ -47,6 +45,9 @@ $ docker run -p 3000:3000 -e PORT=3000 yumafuu/helloworld-webapp
 # This will run the webapp on port 9000 with checking TCP connection.
 $ docker run -p 9000:9000 -e PORT=9000 -e TCP_CONNECTION_ADDRS=mysql.example.com:3306,redis.example.com:6379 yumafuu/helloworld-webapp
 ```
+
+Also [compose.yaml](https://github.com/yumafuu/helloworld-webapp/blob/main/compose.yaml) show full example.
+
 
 
 # Development

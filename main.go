@@ -47,8 +47,8 @@ func init() {
 	}
 
 	fmt.Println("TCP Connections: ", tcpAddrs)
-	fmt.Println("TCP Timeout: ", tcpTimeout)
-	fmt.Println("Port: ", port)
+	fmt.Println("TCP Timeout:     ", tcpTimeout)
+	fmt.Println("Port:            ", port)
 }
 
 func printRequestDetail(r *http.Request) {
@@ -63,7 +63,6 @@ func main() {
 
 	for _, addr := range tcpAddrs {
 		conn, err := net.DialTimeout("tcp", addr, time.Duration(tcpTimeout)*time.Second)
-
 		if err != nil {
 			log.Fatalf("Failed to connect to %s: %v", addr, err)
 		}
